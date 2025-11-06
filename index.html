@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konstantin Sakharov – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="profile">
+        <h1>Konstantin Sakharov</h1>
+        <p><strong>20+ years of making things easier</strong></p>
+        <p>Now – junior test engineer & developer in Kalmar, Sweden</p>
+    </div>
+
+    <nav class="menu">
+        <a href="#profile">Profile & Skills</a>
+        <a href="#experience">Experience & Education</a>
+        <a href="#projects">Current Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="links">
+        <a href="https://konsugar.github.io/frontend-1-cv/" target="_blank">CV (Swedish)</a>
+        <a href="https://linkedin.com/in/konsugar" target="_blank">LinkedIn</a>
+        <a href="https://github.com/konsugar" target="_blank">GitHub</a>
+    </div>
+</aside>
+
+<main class="content">
+
+    <section id="profile" class="with-bottom-divider" data-group="profile">
+    <h2>Profile</h2>
+      
+    <table>
+    <tr style="vertical-align: top;">
+    <td style="width: 200px;">
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQGqSBJVc2qS3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712581783342?e=1764201600&v=beta&t=SpiHBPNP61DP4LPs6cuHNuja0OVWaBu7Go918IihBCQ" alt="Konstantin Sakharov photo"
+        class="profile-photo">
+    </td>
+    <td style="padding-left: 1em;">
+    <p>I am looking for a role in testing and development where precision and understanding of user experience are essential. 
+      With more than 20 years of experience in digital projects and editorial work – combined with a background in project management – 
+      I have a systematic way of thinking that connects structure, data, language, and logic.</p>
+
+      <p>Created a concept for an internal task management system as a thesis project. I enjoy identifying and solving problems with precision and logic, and I value clear project identity and purposeful design.</p>
+    </td>
+    </tr>
+    </table>    
+    
+    </section>
+
+    <section class="with-bottom-divider" data-group="profile">
+        
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Testing & QA:</strong> Postman, Charles Proxy, YouTrack, REST, JSON, Swagger</li>
+        <li><strong>Development:</strong> C#, .NET, Java, Python, JavaScript, HTML/CSS, SQL</li>
+        <li><strong>Tools:</strong> Git, PyCharm, Visual Studio, VS Code, Android Studio, DevTools</li>
+        <li><strong>Design & UX:</strong> Figma, UI kits, Customer Journey Maps, user scenarios</li>
+        <li><strong>Methodology:</strong> Agile/Scrum, test design, test cases, checklists, bug analysis</li>
+      </ul>
+    </section>
+    
+
+    <section id="experience" class="with-bottom-divider" data-group="experience">
+      <h2>Main Experience</h2>
+      <h3>2014 – Present | Quiz Clubs “60 Seconds” & “Kub” (freelance project)</h3>
+      <p>Project manager, editor-in-chief and content lead – planning and quality assurance of quiz content, logic testing of questions, 
+      organization of live and online quiz events with up to 10,000 participants, data analysis and usability improvements.</p>
+
+      <h3>2007 – 2011 | Soundkey (Softkey project – iTunes-ish pre-streaming digital music store)</h3>
+      <p>Head of Operations and Content, Product Owner – managed content and licensing databases, coordinated IT and editorial work, 
+      contributed to internal system development (admin panel, CMS, bug tracking), 
+      and improved B2B/B2C user experience and system logic.</p>
+    </section>
+
+    <section class="with-bottom-divider"  data-group="experience">
+
+
+      <h2>Education & Courses</h2>
+      <p><strong>2025–2026:</strong> Lexicon – Programmer & System Developer with AI</p>
+      <p><strong>2022–2024:</strong> Yandex Practicum – QA (manual and automated) & UI/UX Design</p>
+      <p><strong>2007–2008:</strong> State University of Management (Russia) – Internet Technology Management</p>
+      <p><strong>2000–2004:</strong> Moscow Aviation Institute (Russia) – Radioelectronics</p>
+    </section>
+
+    <section id="projects" class="with-bottom-divider"   data-group="projects">
+      <h2>Current Projects</h2>
+      <ul>
+        <li>(here go my actual projects during developer education)</li>
+      </ul>
+    </section>
+
+        <section data-group="projects">
+      <h2>Bright Future</h2>
+      <ul>
+        <li>When I have much more time, I'm going to write Spotifyer: a Pytnon script that can transit a home collection of files to Favourites and/or playlists.</li>
+      </ul>
+    </section>
+
+
+
+    <section id="contact" class="with-bottom-divider"   data-group="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:konsugar@gmail.com">konsugar@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/konsugar" target="_blank">linkedin.com/in/konsugar</a></p>
+      <p>GitHub: <a href="https://github.com/konsugar" target="_blank">github.com/konsugar</a></p>
+    </section>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.menu a');
+  const sections = document.querySelectorAll('main section');
+
+  function showGroup(groupName) {
+    sections.forEach(sec => {
+      sec.style.display = (sec.dataset.group === groupName) ? 'block' : 'none';
+    });
+  }
+
+  function setActive(link) {
+    links.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('href');
+      const groupName = id.replace('#', '');
+      showGroup(groupName);
+      setActive(link);
+    });
+  });
+
+  if (links.length > 0) {
+    const firstLink = links[0];
+    const firstGroup = firstLink.getAttribute('href').replace('#', '');
+    showGroup(firstGroup);
+    setActive(firstLink);
+  }
+});
+</script>
+
+
+
+
+
+</body>
+</html>
