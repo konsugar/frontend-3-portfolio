@@ -13,15 +13,15 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: "Inter", "Segoe UI", sans-serif;
     background-color: var(--background-default);
     display: flex;
     line-height: 1.6;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 .sidebar {
@@ -53,7 +53,7 @@ sidebar h2 {
     flex-direction: column;
     gap: 0.4rem;
     margin: 2rem 0;
-    align-self: stretch;
+    /* align-self: stretch; */
 }
 
 .menu a {
@@ -82,7 +82,7 @@ sidebar h2 {
 .links a {
     color: var(--blue-light);
     text-decoration: none;
-    margin-bottom: 0.3rem;
+    /* margin-bottom: 0.3rem; */
 }
 
 .menu a,
@@ -139,13 +139,20 @@ a:hover {
   margin-bottom: 2rem;
 }
 
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
 .profile-photo {
-  width: 100%;
+  width: 200px;
   /* max-width: 300px; */
-  height: auto;
-  /* border-radius: 4px; */
-  display: block;
-  margin: 0 1em 1em 0;
+  flex-shrink: 0;
+}
+
+.profile-text {
+  flex: 1;
 }
 
 
@@ -167,7 +174,6 @@ a:hover {
   .menu {
     display: flex;
     flex-direction: column;
-    align-items: left;
     gap: 0.5rem;
     margin: 1.5rem 0;
   }
@@ -181,6 +187,21 @@ a:hover {
   .content {
     margin-left: 0;
     padding: 2rem 1.5rem;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .profile-photo {
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .profile-text {
+    width: 100%;
   }
 }
 
